@@ -38,6 +38,27 @@ def f_alt(a, L = None):
   L.append(a)
   return L
 
-print(f_alt(1))
-print(f_alt(2))
-print(f_alt(3))
+def kwarg_test(name, message='No message provided', number=42):
+  """Demo of keyword arguments""" # positional arguments must precede kwargs when invoked
+  print(name)
+  print('Number is', number)
+  print('Message is', message)
+
+def concat(*args, sep="-"):
+  return sep.join(args)
+
+captain_planet = ['earth', 'fire', 'wind', 'water']
+print(concat(*captain_planet)) # unpack (*) works similar to JS spread
+
+def statement(name='Bob', mood='sad'):
+  print('My name is', name, 'and I am', mood)
+
+dictionary = {
+  'name': 'Mehdi',
+  'mood': 'happy'
+}
+
+statement(**dictionary)
+
+def make_incrementor(n):
+  return lambda x: x + n
