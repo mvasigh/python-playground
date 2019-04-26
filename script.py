@@ -28,4 +28,16 @@ def ask_ok(prompt, retries=4, reminder='Please try again'):
       raise ValueError('Invalid user response')
     print(reminder)
 
-ask_ok('Do you really want to quit?', 6)
+def f(a, L=[]):
+  L.append(a)
+  return L
+
+def f_alt(a, L = None):
+  if L is None:
+    L = []
+  L.append(a)
+  return L
+
+print(f_alt(1))
+print(f_alt(2))
+print(f_alt(3))
