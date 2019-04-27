@@ -62,3 +62,9 @@ statement(**dictionary)
 
 def make_incrementor(n):
   return lambda x: x + n
+
+def annotated_fn(ham: str, eggs: str = 'eggs') -> str:
+  print('Annotations:', annotated_fn.__annotations__)
+  print('Arguments:', ham, eggs)
+
+annotated_fn('ham')
